@@ -30,6 +30,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-function-compiler
     compile group: 'org.springframework.cloud', name: 'spring-cloud-function-compiler', version: '1.0.1.RELEASE'
+!
+    compileOnly("com.amazonaws:aws-lambda-java-events:1.2.1")
+    compileOnly("com.amazonaws:aws-lambda-java-core:1.1.0")
 
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("junit:junit")
