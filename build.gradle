@@ -28,6 +28,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-function-web
     compile group: 'org.springframework.cloud', name: 'spring-cloud-function-web', version: '1.0.1.RELEASE'
 
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-function-adapter-aws
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-function-adapter-aws', version: '1.0.1.RELEASE'
+
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-function-compiler
     compile group: 'org.springframework.cloud', name: 'spring-cloud-function-compiler', version: '1.0.1.RELEASE'
 !
