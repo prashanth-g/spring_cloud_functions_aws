@@ -39,9 +39,9 @@ repositories {
 }
 
 ext {
-    springCloudFunctionVersion = "1.0.0.BUILD-SNAPSHOT"
+    springCloudFunctionVersion = "2.0.0.BUILD-SNAPSHOT"
     awsLambdaEventsVersion = "1.2.1"
-    awsLambdaCoreVersion = "1.2.0"
+    awsLambdaCoreVersion = "1.1.0"
 }
 ext['reactor.version'] = "3.1.7.RELEASE"
 
@@ -53,20 +53,14 @@ jar {
     }
 }
 
-<<<<<<< HEAD
-    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-function-compiler
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-function-compiler', version: '1.0.1.RELEASE'
-!
-    compileOnly("com.amazonaws:aws-lambda-java-events:1.2.1")
-    compileOnly("com.amazonaws:aws-lambda-java-core:1.1.0")
-=======
 import com.github.jengelman.gradle.plugins.shadow.transformers.*
 
 shadowJar {
-    classifier = 'lambda'
+    classifier = 'aws'
     dependencies {
         exclude(dependency("org.springframework.cloud:spring-cloud-function-web:${springCloudFunctionVersion}"))
     }
+    // Required for Spring
     mergeServiceFiles()
     append 'META-INF/spring.handlers'
     append 'META-INF/spring.schemas'
@@ -80,7 +74,6 @@ shadowJar {
 configurations {
     testCompile.extendsFrom(compileOnly)
 }
->>>>>>> 524a761... Added Serverless configuration and updated handler
 
 dependencies {
     compile("org.springframework.cloud:spring-cloud-starter-function-web:${springCloudFunctionVersion}")
